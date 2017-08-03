@@ -16,11 +16,11 @@ export DB_PWD=password
 
 
 #Fetch Worpdress website
-cd /var/www/html
 rm -rf /var/www/html/*
 
-git pull https://github.com/pierreg256/ufo-wordpress.git
-
+cd /tmp
+git clone  https://github.com/pierreg256/ufo-wordpress.git
+cp -R /tmp/ufo-wordpress/* /var/www/html/
 
 
 chown -R www-data:www-data /var/www/html/
