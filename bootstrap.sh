@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get update -y
 
 # install PHP and MySQL
 apt-get install git nginx -y
@@ -96,6 +97,6 @@ mysql -u root --password="$DB_PWD" << EOF
    FLUSH PRIVILEGES;
 EOF
 
-mysql -u $DB_USER -p $DB_NAME --password="$DB_PWD" < wordpress.sql
+curl https://raw.githubusercontent.com/pierreg256/ubuntu-bootstrap-4-wp/master/wordpress.sql | mysql -u $DB_USER -p $DB_NAME --password="$DB_PWD"
 
 
