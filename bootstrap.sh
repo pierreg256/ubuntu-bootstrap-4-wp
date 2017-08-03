@@ -19,6 +19,8 @@ export DB_PWD=password
 rm -rf /var/www/html/*
 
 cd /tmp
+cd rm -rf /tmp/ufo-wordpress
+
 git clone  https://github.com/pierreg256/ufo-wordpress.git
 cp -R /tmp/ufo-wordpress/* /var/www/html/
 
