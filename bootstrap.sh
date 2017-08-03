@@ -26,8 +26,9 @@ cp -R /tmp/ufo-wordpress/* /var/www/html/
 chown -R www-data:www-data /var/www/html/
 chmod -R 755 /var/www/html/
 
+curl https://raw.githubusercontent.com/pierreg256/ubuntu-bootstrap-4-wp/master/default -o /etc/nginx/sites-available/default
 
-cat > /etc/nginx/sites-available/default << EOF
+cat > /etc/nginx/sites-available/default.manual << EOF
 # Default server configuration
 #
 server {
