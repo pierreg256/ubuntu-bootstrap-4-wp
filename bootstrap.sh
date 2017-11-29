@@ -103,3 +103,6 @@ EOF
 curl https://raw.githubusercontent.com/pierreg256/ubuntu-bootstrap-4-wp/master/wordpress.sql | mysql -u $DB_USER -p $DB_NAME --password="$DB_PWD"
 
 
+WP_URL=`curl -H Metadata:true "http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&format=text"`
+mysql -u $DB_USER -p $DB_NAME --password="$DB_PWD" -e "UPDATE wp_options SET option_value='$WP_URL' WHERE option_name='siteurl' OR option_name='home'"
+
